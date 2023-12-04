@@ -4,7 +4,16 @@
     padding: 0;
 }
 
-body {
+/* body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+} */
+
+.container {
     margin: 0;
     display: flex;
     justify-content: center;
@@ -13,43 +22,34 @@ body {
     background-color: #f0f0f0;
 }
 
-#container {
-    overflow: hidden;
-}
-
-#car {
-    display: flex;
-    width: 90vw;
+#carousel {
     height: 60vh;
-    overflow: hidden;
-    align-items: center;
-    transition: transform 0.5s ease-in-out;
+    width: 90vw;
     margin: 0 auto;
     position: relative;
+    background-color: aqua;
+
 }
 
-#car img {
+#carousel img {
     width: 100%;
     height: auto;
     object-fit: cover;
 }
 
-.next {
+#next {
     position: absolute;
     left: 50%;
-
+    bottom: 0;
+    transform: translateX(-50%);
+    padding: 5px;
 }
 
-.prev {
+
+#prev {
     position: absolute;
     left: 50%;
     top: 0;
-}
-
-.item {
-    display: none;
-}
-
-.active {
-    display: block;
+    transform: translateX(-50%);
+    padding: 5px;
 }
