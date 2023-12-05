@@ -55,7 +55,7 @@ const slider = document.querySelector(".slider");
 const next = document.querySelector("#next");
 const prev = document.querySelector("#prev");
 
-let currentSlide = 0;
+let currentImage = 0;
 
 function showPictures(index) {
     const { image, title, text } = images[index];
@@ -66,6 +66,23 @@ function showPictures(index) {
                                 <p>${text}</p>
                             </div>
                         </div>`;
-                        
+
     slider.innerHTML = slidePicture;
 }
+
+function moveImage(direction) {
+
+    currentImage = (currentImage + direction + images.length) % images.length;
+    showPictures(currentImage);
+}
+
+next.addEventListener("click", () => {
+    moveImage(1);
+});
+
+prev.addEventListener("click", () => {
+    moveImage(-1);
+});
+
+
+showPictures(currentImage);
